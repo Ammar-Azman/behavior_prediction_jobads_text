@@ -74,26 +74,28 @@ if button:
         st.error("No input in Location input.")
 
     else:
-        try:
-            user_inputs = input_pipeline([jobdas_text_input], [work_location])
-            st.write(user_inputs)
-        except Exception as e1:
-            st.error("ERROR e1: input_pipeline()")
-            st.error(f"ERROR e1:{e1}")
-        try:
-            model_preds = predict(user_inputs)
-        except Exception as e2:
-            st.error("ERROR e2: predict()")
-            st.error(f"ERROR e2:{e2}")
-        try:
-            output, pred_probs = process_prediction(model_preds)
-        except Exception as e3:
-            st.error("ERROR e3: process_prediction()")
-            st.error(f"ERROR e3:{e3}")
+        with st.spinner("Predicting..."):
+            try:
+                user_inputs = input_pipeline([jobdas_text_input], [work_location])
+            except Exception as e1:
+                st.error("ERROR e1: input_pipeline()")
+                st.error(f"ERROR e1:{e1}")
+            try:
+                model_preds = predict(user_inputs)
+            except Exception as e2:
+                st.error("ERROR e2: predict()")
+                st.error(f"ERROR e2:{e2}")
+            try:
+                output, pred_probs = process_prediction(model_preds)
+            except Exception as e3:
+                st.error("ERROR e3: process_prediction()")
+                st.error(f"ERROR e3:{e3}")
 
-        if output == "V":
-            st.caption("User predicted behavior: View")
-            st.caption(f"Probability: {pred_probs}")
-        else:
-            st.caption("User predicted behavior: Application")
-            st.caption(f"Probability: {pred_probs}")
+            if output == "V":
+                st.subheader("User predicted behavior: View")
+                st.subheader(f"Probability: {pred_probs}")
+                st.balloons()
+            else:
+                st.subheader("User predicted behavior: Application")
+                st.subheader(f"Probability: {pred_probs}")
+                st.balloons()
