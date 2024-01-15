@@ -5,7 +5,7 @@ from pathlib import Path
 
 project_path = Path("./behavior_prediction_jobads_text")
 model_name = "model_1_1_multimodal_epoch_20"
-ohe_location_train_load = np.load(project_path / "onehotencoder_location_train.npy")
+ohe_location_train_load = np.load("onehotencoder_location_train.npy")
 
 
 def load_model():
