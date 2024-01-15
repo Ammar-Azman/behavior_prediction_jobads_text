@@ -16,7 +16,7 @@ def load_model():
 
 
 def load_target_ohe():
-    ohe = np.load("target_col_ohe.npy", allow_pickle=True)
+    ohe = load("target_ohe.joblib")
     return ohe
 
 
