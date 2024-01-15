@@ -89,7 +89,7 @@ if button:
             output, pred_probs = process_prediction(model_preds)
         except Exception as e3:
             st.error("ERROR e3: process_prediction()")
-            st.error(f"ERROR e1:{e3}")
+            st.error(f"ERROR e3:{e3}")
 
         if output == "V":
             st.caption("User predicted behavior: View")
