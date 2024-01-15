@@ -3,9 +3,9 @@ import tensorflow as tf
 from pathlib import Path
 from utils import *
 
-st.title("Behavior Prediction Model Based on Jobads Text Description")
+st.title("Behavior Prediction Model by Jobads Text Description")
 
-jobdas_text_input: str = st.text_input("Insert your best job description!")
+jobdas_text_input: str = st.text_area("Insert your best job description!")
 work_location = st.selectbox(
     "Pick a location!",
     sorted(
