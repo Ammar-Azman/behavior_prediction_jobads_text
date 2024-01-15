@@ -38,9 +38,7 @@ def input_pipeline(job_description: list, location: list):
 
     text = input_df["text"].to_numpy()
     location = input_df["location"].to_numpy().reshape(-1, 1)
-    # print(text)
-    # print(text.shape)
-    # ohe_location = OneHotEncoder(sparse_output=False)
+
     try:
         location_data_ohe = ohe_location_train_load.transform(location)
 

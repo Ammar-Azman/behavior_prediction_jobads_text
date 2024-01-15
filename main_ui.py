@@ -3,7 +3,7 @@ import tensorflow as tf
 from pathlib import Path
 from utils import *
 
-st.title("Behavior Prediction Model Based on on Jobads Description")
+st.title("Behavior Prediction Model Based on Jobads Text Description")
 
 jobdas_text_input: str = st.text_input("Insert your best job description!")
 work_location = st.selectbox(
@@ -79,17 +79,17 @@ if button:
             st.write(user_inputs)
         except Exception as e1:
             st.error("ERROR e1: input_pipeline()")
-            print(f"ERROR e1:{e1}")
+            st.error(f"ERROR e1:{e1}")
         try:
             model_preds = predict(user_inputs)
         except Exception as e2:
             st.error("ERROR e2: predict()")
-            print(f"ERROR e2:{e2}")
+            st.error(f"ERROR e2:{e2}")
         try:
             output, pred_probs = process_prediction(model_preds)
         except Exception as e3:
             st.error("ERROR e3: process_prediction()")
-            print(f"ERROR e1:{e3}")
+            st.error(f"ERROR e1:{e3}")
 
         if output == "V":
             st.caption("User predicted behavior: View")
