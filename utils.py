@@ -3,10 +3,11 @@ import pandas as pd
 import tensorflow as tf
 from pathlib import Path
 import streamlit as st
+from joblib import load
 
 project_path = Path("./behavior_prediction_jobads_text")
 model_name = "model_1_1_multimodal_epoch_20"
-ohe_location_train_load = np.load("ohe_location_train.npy", allow_pickle=True)
+ohe_location_train_load = load("ohe_location_train.joblib")
 
 
 def load_model():
