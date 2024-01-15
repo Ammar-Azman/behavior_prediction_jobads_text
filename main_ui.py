@@ -77,17 +77,17 @@ if button:
         try:
             user_input = input_pipeline(jobdas_text_input, work_location)
         except Exception as e1:
-            print("ERROR e1: input_pipeline()")
+            st.error("ERROR e1: input_pipeline()")
             print(f"ERROR e1:{e1}")
         try:
             model_preds = predict(user_input)
         except Exception as e2:
-            print("ERROR e2: predict()")
+            st.error("ERROR e2: predict()")
             print(f"ERROR e2:{e2}")
         try:
             output, pred_probs = process_prediction(model_preds)
         except Exception as e3:
-            print("ERROR e3: process_prediction()")
+            st.error("ERROR e3: process_prediction()")
             print(f"ERROR e1:{e3}")
 
         if output == "V":
