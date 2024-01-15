@@ -57,7 +57,7 @@ def input_pipeline(job_description: str, location: str):
         input_zip = tf.data.Dataset.zip((input_slice, output_filler))
 
         user_input = input_zip.batch(1024).prefetch(tf.data.AUTOTUNE)
-
+        print("DEBUGGG;", user_input)
         return user_input
     except:
         print(f"ERROR: Location is {location} not found")
