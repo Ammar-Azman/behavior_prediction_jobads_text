@@ -63,7 +63,7 @@ work_location = st.selectbox(
         ]
     ),
 )
-
+st.write(work_location)
 st.code("Click to predict user behavior!")
 button = st.button("Predict")
 

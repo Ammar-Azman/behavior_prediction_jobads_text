@@ -9,7 +9,7 @@ ohe_location_train_load = np.load("onehotencoder_location_train.npy", allow_pick
 
 
 def load_model():
-    model = tf.keras.models.load_model(project_path / model_name)
+    model = tf.keras.models.load_model(model_name)
     return model
 
 
