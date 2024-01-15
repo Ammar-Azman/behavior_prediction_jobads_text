@@ -16,7 +16,7 @@ def load_model():
 
 
 def load_target_ohe():
-    ohe = np.load(project_path / "target_ohe.npy")
+    ohe = np.load("target_ohe.npy")
     return ohe
 
 
