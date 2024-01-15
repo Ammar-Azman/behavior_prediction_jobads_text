@@ -87,15 +87,18 @@ if button:
                 st.error(f"ERROR e2:{e2}")
             try:
                 output, pred_probs = process_prediction(model_preds)
+                pred_probs = round(float(pred_probs), 2)
             except Exception as e3:
                 st.error("ERROR e3: process_prediction()")
                 st.error(f"ERROR e3:{e3}")
 
             if output == "V":
-                st.subheader("User predicted behavior: View")
+                st.header("Results:")
+                st.subheader("Predicted behavior: View")
                 st.subheader(f"Probability: {pred_probs}")
                 st.balloons()
             else:
-                st.subheader("User predicted behavior: Application")
+                st.header("Results:")
+                st.subheader("Predicted behavior: Application")
                 st.subheader(f"Probability: {pred_probs}")
                 st.balloons()
