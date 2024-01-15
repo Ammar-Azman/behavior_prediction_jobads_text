@@ -68,7 +68,7 @@ st.code("Click to predict user behavior!")
 button = st.button("Predict")
 
 if button:
-    if jobdas_text_input and work_location:
+    if not jobdas_text_input and not work_location:
         st.error("No input in Text input or Location input.")
 
     else:
