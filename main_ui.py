@@ -5,7 +5,9 @@ from utils import *
 
 st.title("Behavior Prediction Model by Jobads Text Description")
 
-jobdas_text_input: str = st.text_area("Insert your best job description!")
+jobdas_text_input: str = st.text_area(
+    "Insert your best job description!", "lorum ipsum"
+)
 work_location = st.selectbox(
     "Pick a location!",
     sorted(
