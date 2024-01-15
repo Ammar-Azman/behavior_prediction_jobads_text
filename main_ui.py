@@ -68,8 +68,11 @@ st.code("Click to predict user behavior!")
 button = st.button("Predict")
 
 if button:
-    if not jobdas_text_input and not work_location:
-        st.error("No input in Text input or Location input.")
+    if not jobdas_text_input:
+        st.error("No input in Text input.")
+
+    if not work_location:
+        st.error("No input in Location input.")
 
     else:
         user_input = input_pipeline(jobdas_text_input, work_location)
