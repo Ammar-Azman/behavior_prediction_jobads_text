@@ -16,7 +16,7 @@ def load_model():
 
 
 def load_target_ohe():
-    ohe = np.load("target_ohe.npy")
+    ohe = np.load("target_col_ohe.npy")
     return ohe
 
 
@@ -29,7 +29,8 @@ def predict(input):
 
 def process_prediction(model_prediction):
     model_argmax = tf.math.argmax(tf.squeeze(model_prediction).numpy())
-    model_pred_arg = load_target_ohe().categories_[0][model_argmax]
+    ohe = load_target_ohe()
+    model_pred_arg = ohe.categories_[0][model_argmax]
     model_preds_probs = tf.squeeze(model_prediction)[model_argmax]
     return model_pred_arg, model_preds_probs
 
