@@ -75,7 +75,7 @@ if button:
 
     else:
         try:
-            user_inputs = input_pipeline(jobdas_text_input, work_location)
+            user_inputs = input_pipeline([jobdas_text_input], [work_location])
             st.write(user_inputs)
         except Exception as e1:
             st.error("ERROR e1: input_pipeline()")

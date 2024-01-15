@@ -32,8 +32,8 @@ def process_prediction(model_prediction):
     return model_pred_arg, model_preds_probs
 
 
-def input_pipeline(job_description: str, location: str):
-    data = {"text": [job_description], "location": [location]}
+def input_pipeline(job_description: list, location: list):
+    data = {"text": job_description, "location": location}
     input_df = pd.DataFrame(data)
 
     text = input_df["text"].to_numpy()
