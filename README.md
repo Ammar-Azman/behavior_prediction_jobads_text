@@ -12,6 +12,7 @@ User behavior analysis, modelling and prediction by text classification and mult
 
 # Play with Model
 - 👉 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://behaviorpredictionjobads.streamlit.app/)
+- Model deployed: Model 1.1 (Bi-LSTM, 20 epochs)
 
 # Training Results
 |Model idx|Model name|Features col|Target col|Epochs|Accuracy (%)|
@@ -32,7 +33,7 @@ User behavior analysis, modelling and prediction by text classification and mult
         - [ ] Training for 100 epochs
         - [ ] Using pre-trained embedding (USE) and Huggingface transformer model.
         - [ ] Using different columns for multi-modal model.
-        - [ ] Using useful callbacks such as RecudeLROnPlateau and EarlyStopping.
+        - [ ] Using useful callbacks such as ReduceLROnPlateau and EarlyStopping.
     - Case 2:
         - [ ] Building similarity score algorithm based on embedding vector.
 
