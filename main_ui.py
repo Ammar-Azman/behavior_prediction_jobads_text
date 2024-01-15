@@ -75,12 +75,13 @@ if button:
 
     else:
         try:
-            user_input = input_pipeline(jobdas_text_input, work_location)
+            user_inputs = input_pipeline(jobdas_text_input, work_location)
+            st.write(user_inputs)
         except Exception as e1:
             st.error("ERROR e1: input_pipeline()")
             print(f"ERROR e1:{e1}")
         try:
-            model_preds = predict(user_input)
+            model_preds = predict(user_inputs)
         except Exception as e2:
             st.error("ERROR e2: predict()")
             print(f"ERROR e2:{e2}")
