@@ -2,10 +2,11 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from pathlib import Path
+import streamlit as st
 
 project_path = Path("./behavior_prediction_jobads_text")
 model_name = "model_1_1_multimodal_epoch_20"
-ohe_location_train_load = np.load("onehotencoder_location_train.npy", allow_pickle=True)
+ohe_location_train_load = np.load("ohe_location_train.npy", allow_pickle=True)
 
 
 def load_model():
@@ -55,7 +56,7 @@ def input_pipeline(job_description: list, location: list):
         input_zip = tf.data.Dataset.zip((input_slice, output_filler))
 
         user_input = input_zip.batch(1024).prefetch(tf.data.AUTOTUNE)
-        print("DEBUGGG;", user_input)
+
         return user_input
     except:
         print(f"ERROR: Location is {location} not found")
