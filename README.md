@@ -11,7 +11,7 @@ User behavior analysis, modelling and prediction by text classification and mult
     - ads-50k.json
 
 # Play with Model
-- 👉 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://behaviorpredictionjobads.streamlit.app/)
+- [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://behaviorpredictionjobads.streamlit.app/)
 - Model deployed: Model 1.1 (Bi-LSTM, 20 epochs)
 
 # Training Results
@@ -26,7 +26,7 @@ User behavior analysis, modelling and prediction by text classification and mult
 ## Analysis
 
 - Deep learning modelling sucessfully exceed the accuracy of base model.
-- Theoritically, by increasing the epochs of training, the model accuracy will improve.
+- Hypotethically, by increasing the epochs of training, the model accuracy will improve too.
 - However, there is a limitation in terms of computation power due to model is trained by using Google Colab free GPU (Tesla T4). Kernel has down for some reasons.
 - Possible further experimentation:
     - Case 1:
