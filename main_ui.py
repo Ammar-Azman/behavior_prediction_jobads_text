@@ -3,7 +3,10 @@ import tensorflow as tf
 from pathlib import Path
 from utils import *
 
-st.title("Behavior Prediction Model by Jobads Text Description")
+st.title("Behavior Prediction by Jobads Text Description and Location")
+st.caption(
+    "By using job advertistment and location as input, model will predict the behavior of user either View or Apply."
+)
 
 jobdas_text_input: str = st.text_area(
     "Insert your best job description!", "Excecutive of..."
